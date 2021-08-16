@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coronavirus Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container">
+  <h1>Coronavirus Tracker Application</h1>
+  <p>This application lists the current number of cases/deaths reported
+    across the United States.</p>
+</div>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4" th:text="${totalCases}"></h1>
+    <p class="lead">Total cases reported as of today.</p>
+    <hr class="my-4">
+  </div>
+</div>
+
+<div class="container">
+  <table class="table">
+    <tr>
+      <th>FIPS</th>
+      <th>State</th>
+      <th>Cases</th>
+      <th>Deaths</th>
+
+    </tr>
+    <tr th:each="stateEntity : ${allStates}">
+      <td th:text="${stateEntity.fips}">-1</td>
+      <td th:text="${stateEntity.stateName}">Undefined</td>
+      <td th:text="${stateEntity.totalCases}">0</td>
+      <td th:text="${stateEntity.totalDeaths}">0</td>
+    </tr>
+
+  </table>
+</div>
+
+</body>
+</html>
