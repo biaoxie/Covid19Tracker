@@ -4,6 +4,9 @@
 
 This app display up-to-date Covid-19 data of different states.
 
+![homepage](src/main/resources/images/home.png)
+
+
 Raw data from The New York Times. [Link](https://github.com/nytimes/covid-19-data)
 
 ## Installation
