@@ -28,8 +28,8 @@
       <th>State</th>
       <th>Cases</th>
       <th>Deaths</th>
-
     </tr>
+
     <tr th:each="stateEntity : ${allStates}">
       <td th:text="${stateEntity.fips}">-1</td>
       <td th:text="${stateEntity.stateName}">Undefined</td>
