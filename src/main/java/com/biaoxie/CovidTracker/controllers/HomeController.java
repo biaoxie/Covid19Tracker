@@ -60,10 +60,6 @@ public class HomeController {
             model.addAttribute("caseInfos", caseInfos);
             model.addAttribute("newCases", newCases);
 
-
-
-
-
         }
 
 

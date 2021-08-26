@@ -32,13 +32,14 @@
 
     <tr th:each="stateEntity : ${allStates}">
       <td th:text="${stateEntity.fips}">-1</td>
-      <td th:text="${stateEntity.stateName}">Undefined</td>
+      <td> <a th:href="@{/{fips}/latest(fips=${stateEntity.fips})}"><span th:text="${stateEntity.stateName}"></span></a></td>
       <td th:text="${stateEntity.totalCases}">0</td>
       <td th:text="${stateEntity.totalDeaths}">0</td>
     </tr>
-
   </table>
 </div>
+
+
 
 </body>
 </html>
