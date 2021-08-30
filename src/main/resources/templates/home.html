@@ -16,7 +16,7 @@
 
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-4" th:text="${totalCases}"></h1>
+    <h1 class="display-4" th:text="${#numbers.formatDecimal(totalCases, 0, 'COMMA', 0, 'POINT')}"></h1>
     <p class="lead">Total cases reported as of today.</p>
     <hr class="my-4">
   </div>
@@ -35,8 +35,8 @@
     <tr th:each="stateEntity : ${allStates}">
       <td th:text="${stateEntity.fips}">-1</td>
       <td> <a th:href="@{/{fips}/latest(fips=${stateEntity.fips})}"><span th:text="${stateEntity.stateName}"></span></a></td>
-      <td th:text="${stateEntity.totalCases}">0</td>
-      <td th:text="${stateEntity.totalDeaths}">0</td>
+      <td th:text="${#numbers.formatDecimal(stateEntity.totalCases, 0, 'COMMA', 0, 'POINT')}">0</td>
+      <td th:text="${#numbers.formatDecimal(stateEntity.totalDeaths, 0, 'COMMA', 0, 'POINT')}">0</td>
     </tr>
   </table>
 </div>

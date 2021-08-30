@@ -14,7 +14,9 @@
 
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-4" th:text="${totalCases}"></h1>
+    <h1 class="display-4" th:text="${#numbers.formatDecimal(totalCases, 0, 'COMMA', 0, 'POINT')}">
+
+    </h1>
     <p class="lead">Total cases reported in <span th:text="${stateName}"></span> .</p>
     <hr class="my-4">
   </div>
@@ -33,10 +35,10 @@
 
     <tr th:each="caseInfo, iterStat : ${caseInfos}">
       <td th:text="${caseInfo.getDate}"></td>
-      <td th:text="${caseInfo.getCases}"></td>
-      <td th:text="${newCases[iterStat.index].getCases}"></td>
-      <td th:text="${caseInfo.getDeaths}"></td>
-      <td th:text="${newCases[iterStat.index].getDeaths}"></td>
+      <td th:text="${#numbers.formatDecimal(caseInfo.getCases, 0, 'COMMA', 0, 'POINT')}"></td>
+      <td th:text="${#numbers.formatDecimal(newCases[iterStat.index].getCases, 0, 'COMMA', 0, 'POINT')}"></td>
+      <td th:text="${#numbers.formatDecimal(caseInfo.getDeaths, 0, 'COMMA', 0, 'POINT')}"></td>
+      <td th:text="${#numbers.formatDecimal(newCases[iterStat.index].getDeaths, 0, 'COMMA', 0, 'POINT')}"></td>
     </tr>
 
   </table>
